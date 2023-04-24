@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Please Log In</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" >
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" >
+    <link rel="stylesheet" href="/css/login.css" type="text/css"/>
+</head>
+<body>
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <div
+                        class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                    <p class="lead fw-normal mb-0 me-3">Login with OAuth 2.0</p>
+                </div>
+                <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                    <table class="table table-striped">
+                        <tbody>
+                        <tr>
+                            <td><a href="/oauth2/authorization/google">Google</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <form th:action="@{/login}" method="post">
+                    <div class="divider d-flex align-items-center my-4">
+                        <p class="text-center fw-bold mx-3 mb-0">Or</p>
+                    </div>
+                    <!-- Username input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" name="username" class="form-control form-control-lg"
+                               placeholder="Username" />
+                    </div>
+                    <!-- Password input -->
+                    <div class="form-outline mb-3">
+                        <input type="password" name="password" class="form-control form-control-lg"
+                               placeholder="Password" />
+                    </div>
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
